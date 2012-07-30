@@ -33,7 +33,7 @@ function getWines() {
 
 		$db = null;
 
-		echo '{"wine": ' . json_encode($wines) . '}';
+		echo json_encode($wines);
 
 	} catch (PDOException $e) {
 		echo '{"error":{"text":' . $e->getMessage() . '}}';

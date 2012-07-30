@@ -3,32 +3,28 @@
   font-size: 18px;
 }
 
-.header {
-	padding-top: 5px;
-}
-
 .leftArea {
 	position: absolute;
 	left: 10px;
-	top: 70px;
+	top: 10px;
 	bottom: 20px;
 	width: 260px;
 	border:solid 1px #CCCCCC;
 	overflow-y: scroll;
 }
 
-.mainArea {
+.form-left-col {
 	position: absolute;
-	top: 70px;
+	top: 10px;
 	bottom: 20px;
 	left:300px;
 	overflow-y: scroll;
 	width:300px;
 }
 
-.rightArea {
+.form-right-col {
 	position: absolute;
-	top: 70px;
+	top: 10px;
 	bottom: 20px;
 	left:650px;
 	overflow-y: scroll;
@@ -60,7 +56,7 @@ input, textarea {
   outline: none;
 }
 
-.mainArea input {
+.form-left-col input {
   margin-bottom:15px;
   margin-top:5px;
   width:280px;
@@ -79,9 +75,4 @@ label {
 
 button {
 	padding:6px;
-}
-
-
-#searchKey {
-	width:160px;
 }
