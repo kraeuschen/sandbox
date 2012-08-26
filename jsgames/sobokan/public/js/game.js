@@ -1,30 +1,34 @@
-var _canvas        = document.getElementById('canvas');
-var _canvasContext = null;
+var _canvas = document.getElementById('canvas');
 
-// check whether browser supports getting canvas context
 if (_canvas && _canvas.getContext) {
-    _canvasContext = _canvas.getContext('2d');
+    _canvasContext       = _canvas.getContext('2d');
+    _canvasBuffer        = document.createElement('canvas');
+    _canvasBuffer.width  = _canvas.width;
+    _canvasBuffer.height = _canvas.height;
+    _canvasBufferContext = _canvasBuffer.getContext('2d');
 
     var x = 10;
     var y = 10;
 
-    _canvasContext.fillStyle = "rgb(127,0,0)";
-    _canvasContext.fillRect(x, y, 100, 85);
+    _canvasBufferContext.fillStyle = "rgb(127,0,0)";
+    _canvasBufferContext.fillRect(x, y, 100, 85);
     
     x += 120;
-    _canvasContext.strokeStyle = "rgb(0,0,0)";
-    _canvasContext.strokeRect(x, y, 10, 185);
-    
+    _canvasBufferContext.strokeStyle = "rgb(0,0,0)";
+    _canvasBufferContext.strokeRect(x, y, 10, 185);
+
     x = 10;
     y += 120;
-    _canvasContext.fillStyle = "rgb(127,255,0)";
-    _canvasContext.font = "bold 26px sans-serif";
-    _canvasContext.fillText('Test text ', x, y);
+    _canvasBufferContext.fillStyle = "rgb(127,255,0)";
+    _canvasBufferContext.font = "bold 26px sans-serif";
+    _canvasBufferContext.fillText('Test text ', x, y);
 
     y += 20;
     var img = new Image();
     img.src = "img/box.gif";
     img.onload = function () {
-        _canvasContext.drawImage(img, x, y);
+        _canvasBufferContext.drawImage(img, x, y);
     }
+
+    _canvasContext.drawImage(_canvasBuffer, 0, 0);
 }
