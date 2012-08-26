@@ -26,9 +26,12 @@ if (_canvas && _canvas.getContext) {
     y += 20;
     var img = new Image();
     img.src = "img/box.gif";
-    img.onload = function () {
+    img.onload = function() {
         _canvasBufferContext.drawImage(img, x, y);
+        drawCanvas(); // draw stage after loading the image
     }
-
-    _canvasContext.drawImage(_canvasBuffer, 0, 0);
 }
+
+var drawCanvas = function() {
+    _canvasContext.drawImage(_canvasBuffer, 0, 0);
+}   
