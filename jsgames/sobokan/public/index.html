@@ -1,9 +1,22 @@
+<!doctype html>
 <html>
     <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sokoban</title>
     </head>
     <body>
         <canvas id="canvas" width="800" height="500">Canvas not supported.</canvas>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/levelStatistics.js"></script>
+        <script type="text/javascript" src="js/drawableElements.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
         <script type="text/javascript" src="js/game.js"></script>
+
+		<script type="text/javascript">
+			var sokobanGame = new Game();
+	       	sokobanGame.Run();
+	   </script>
     </body>
 </html>
